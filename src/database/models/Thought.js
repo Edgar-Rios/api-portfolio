@@ -7,28 +7,28 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate( {Category, Owner} ) {
+    static associate({ Category, Owner }) {
       // define association here
-      Thought.belongsTo(Category, { foreignKey: "category_id"});
-      Thought.belongsTo(Owner, { foreignKey: "owner_id"});
+      Thought.belongsTo(Category, { foreignKey: "category_id" });
+      Thought.belongsTo(Owner, { foreignKey: "owner_id" });
     }
   }
   Thought.init({
-   
+
     title: {
-        type: DataTypes.STRING(75),
-        allowNull: false,
+      type: DataTypes.STRING(75),
+      allowNull: false,
     },
 
     content: {
       type: DataTypes.TEXT,
       allowNull: false,
     },
-        
+
   }, {
     sequelize,
     modelName: 'Thought',
-    tableName: 'Thought',
+    tableName: 'thought',
     timestamps: false,
   });
   return Thought;

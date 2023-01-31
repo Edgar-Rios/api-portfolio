@@ -7,9 +7,9 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate({Owner}) {
+    static associate({ Owner }) {
       // define association here
-      Proyect.belongsTo(Owner, {foreignKey: "owner_id"});
+      Proyect.belongsTo(Owner, { foreignKey: "owner_id" });
     }
   }
   Proyect.init({
@@ -19,22 +19,22 @@ module.exports = (sequelize, DataTypes) => {
     //   autoIncrement: true,
     //   allowNull: false
     // },
-   
+
     title: {
-        type: DataTypes.STRING(100),
-        allowNull: false,
-        defaultValue: "PROYECTO",
+      type: DataTypes.STRING(100),
+      allowNull: false,
+      defaultValue: "PROYECTO",
     },
-    
+
     link: {
-        type: DataTypes.STRING(200),
-        allowNull: false,
+      type: DataTypes.STRING(200),
+      allowNull: false,
     },
 
   }, {
     sequelize,
     modelName: 'Proyect',
-    tableName: 'Proyect',
+    tableName: 'proyect',
     timestamps: false,
   });
   return Proyect;
